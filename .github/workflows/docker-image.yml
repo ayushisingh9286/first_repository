@@ -1,0 +1,26 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ayushisingh9286
+        password: Rekha@08111966242572
+
+    - name: Build Docker image
+      run: docker build -t ayushisingh9286/myapp:latest .
+
+    - name: Push Docker image
+      run: docker push ayushisingh9286/myapp:latest
