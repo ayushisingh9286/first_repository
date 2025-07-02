@@ -20,8 +20,8 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t ayushisingh9286/myapp:latest .
+      run: docker build -t ayushiisingh/myapp:latest .
 
     - name: Push Docker image
-      run: docker push ayushisingh9286/myapp:latest
+      run: docker push ayushiisingh/myapp:latest
 
